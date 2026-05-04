@@ -1,0 +1,110 @@
+html {}
+
+body {
+    margin: 0;
+    background-color: rgb(253, 199, 208);
+    font-family: 'Diphylleia';
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border-radius: 10%;
+}
+
+header {
+    background-color: lightpink;
+    height: 80px;
+    padding: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    width: 200px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: whitesmoke;
+}
+.poeng {
+    width: 200px;
+    border: solid white 3px;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.navigation a {
+    display: inline-block;
+    color: black;
+    justify-items: right;
+    text-align: center;
+    padding: 11px;
+    text-decoration: none;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.navigation a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.navigation a.active {
+    background-color: rgb(222, 115, 255);
+    color: white;
+}
+
+section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.topDel {
+    display: flex;
+    justify-content: flex-end;
+    gap:50px;
+}
+
+.boks {
+    background-color: lightblue;
+    border-bottom: solid 5px cornflowerblue;
+    border-left: solid 5px cornflowerblue;
+    border-right: solid 5px cornflowerblue;
+    width: 600px;
+    height: 450px;
+    transform: perspective(600px) rotateX(-30deg);
+}
+
+.ballSpace {
+    width: 730px;
+    height: 200px;
+    border: dashed blueviolet 3px;
+}
+
+.neste {
+    height: 200px;
+    width: 300px;
+    border: white 5px solid;
+
+}
+
+
+footer {
+    background-color: lightpink;
+}
