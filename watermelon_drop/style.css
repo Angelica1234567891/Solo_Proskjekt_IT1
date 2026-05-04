@@ -30,11 +30,23 @@ nav {
     width: 200px;
 }
 
+nav img {
+    width: 30px;
+}
+
 h1 {
     text-align: center;
     font-size: 50px;
     color: whitesmoke;
 }
+
+.topBoks {
+    display: flex;
+    flex-direction: column;
+    margin-top: 420px;
+    gap: 20px;
+}
+
 .poeng {
     width: 200px;
     border: solid white 3px;
@@ -43,6 +55,12 @@ h1 {
     display: flex;
     align-items: center;
     padding: 10px;
+}
+
+
+.block {
+    
+    
 }
 
 .navigation a {
@@ -67,18 +85,19 @@ h1 {
     color: white;
 }
 
+
 section {
     min-height: 90vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
 }
 
 .topDel {
     display: flex;
-    justify-content: flex-end;
-    gap:50px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .boks {
@@ -97,14 +116,35 @@ section {
     border: dashed blueviolet 3px;
 }
 
-.neste {
-    height: 200px;
-    width: 300px;
-    border: white 5px solid;
-
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 640px;
+    width: 200px;
+    position: absolute;
+    right: 21px;
+    top: 0;           
 }
 
+.neste {
+    height: 200px;
+    width: 200px;
+    color: white;
+    border: white 3px solid;
+    padding: 10px;
+}
+
+.rekkefølge {
+    height: 100px;
+    width: 400px;
+    border: 3px solid white;
+}
 
 footer {
     background-color: lightpink;
 }
+
+
+
