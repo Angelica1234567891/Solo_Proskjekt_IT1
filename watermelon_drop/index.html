@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 <head>
     <meta charset="UTF-8">
@@ -11,18 +15,25 @@
 <body>
     <header>
         <nav>
-            <img src="/bilder/icon-hamburger.svg" alt="">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark"></i>
         </nav>
         <h1>Watermelon Drop Game</h1>
-            <div class="poeng">
-                <h3>Poeng:</h3>
-            </div>
+        <div class="poeng">
+            <h3>Poeng:</h3>
+        </div>
     </header>
 
     <main>
         <section>
+            <div class=".navbar">
+                <div><i class="fa-solid fa-volume"></i></div>
+                <div><i class="fa-solid fa-rotate-right"></i></div>
+                <div><i class="fa-solid fa-music"></i></div>
+                <div><i class="fa-solid fa-moon"></i></div>
+            </div>
             <div class="topDel">
-                <div class="ballSpace"></div>
+                <canvas class="ballSpace"></canvas>
                 <div class="boks"></div>
             </div>
 
@@ -36,7 +47,6 @@
     </main>
 
     <footer></footer>
-    <canvas></canvas>
     <script src="script.js"></script>
 </body>
 

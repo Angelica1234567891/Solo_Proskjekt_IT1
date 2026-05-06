@@ -116,6 +116,22 @@ section {
     border: dashed blueviolet 3px;
 }
 
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 640px;
+    width: 200px;
+    position: absolute;
+    left: 21px;
+    top: 0; 
+    border: deeppink 2px solid;
+}
+
+.fa-solid {
+    color: white;
+}
+
 .sidebar {
     display: flex;
     flex-direction: column;
