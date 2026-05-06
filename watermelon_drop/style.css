@@ -107,7 +107,16 @@ section {
     border-right: solid 5px cornflowerblue;
     width: 600px;
     height: 450px;
+    position: relative;
     transform: perspective(600px) rotateX(-30deg);
+}
+
+.dropCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .ballSpace {
