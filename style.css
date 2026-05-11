@@ -30,9 +30,36 @@ nav {
     font-size: 40px;
 }
 
+#navbar {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 80px;
+    background-color: lightblue;
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+}
+
+#navbar.open {
+    display: flex;
+    flex-direction: column;
+}
+
+#kryss {
+    display: none;
+    cursor: pointer;
+}
+
+#burger {
+    cursor: pointer;
+}
+
 .logo {
     display: flex;
     align-items: center;
+    width: 100px;
 }
 
 .logo img {
@@ -41,10 +68,10 @@ nav {
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 250px);
     grid-template-rows: auto;
     justify-items: center;
-    padding-inline: 100px;
+    justify-content: center;
     gap: 20px;
 
 }
@@ -58,6 +85,15 @@ nav {
     flex-wrap: wrap;
     align-items: center;
     overflow: hidden;
+    
+}
+
+.grid>div:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    /* Øker lysstyrken med 30% */
+    border-radius: 10%;
+    transform: scale(1.05);
+    /* Valgfritt: forstørrer bildet litt */
 }
 
 .grid img {
