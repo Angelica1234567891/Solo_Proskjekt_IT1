@@ -36,14 +36,3 @@ light.addEventListener("click", function() {
     light.style.display = "none"
 })
 
-
-const holeElm = document.querySelectorAll(".hole")
-
-holeElm.forEach(hole => {
-    hole.addEventListener("click", klikk)
-})
-
-function klikk(event) {
-    console.log("hei")
-
-}
