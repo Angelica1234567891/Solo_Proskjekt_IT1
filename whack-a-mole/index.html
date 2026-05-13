@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>noe annet</title>
+    <title>Whack-a-mole</title>
 </head>
+
 <body>
-    
+    <header>
+        <nav>
+            <i class="fa-solid fa-bars" id="burger"></i>
+            <div class="">
+                <i class="fa-solid fa-xmark" id="kryss"></i>
+            </div>
+            <div class="navbar" id="navbar">
+                <div><a href="/index.html"><i class="fa-solid fa-house"></i></a></i></div>
+                <div onclick="restart()"><i class="fa-solid fa-rotate-right"></i></div>
+                <div><i class="fa-solid fa-music"></i></div>
+                <div><i class="fa-solid fa-moon"></i></div>
+            </div>
+        </nav>
+        <div class="logo">
+            <img src="bilder/PixelLogo.png" alt="">
+        </div>
+        <h1>Whack-a-mole</h1>
+        <div id="poeng">
+            <h3>Poeng:</h3>
+        </div>
+    </header>
+    <main>
+        <section id="s1">
+            <div class="boks">
+                <div class="hole mole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+                <div class="hole"></div>
+            </div>
+        </section>
+    </main>
+    <footer></footer>
     <script src="script.js"></script>
 </body>
+
 </html>

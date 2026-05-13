@@ -2,7 +2,7 @@ html {}
 
 body {
     margin: 0;
-    background-color: rgb(253, 199, 208);
+    background-color: rgb(199, 244, 253);
     font-family: 'Diphylleia';
 }
 
@@ -18,35 +18,90 @@ img {
 }
 
 header {
-    background-color: lightpink;
-    height: 150px;
+    background-color: lightblue;
+    height: 80px;
+    padding: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h1 {
     text-align: center;
-    font-size: 70px;
-    margin: 0;
-    color: whitesmoke;
+    font-size: 50px;
+
 }
 
-.navigation a {
-    display: inline-block;
-    color: black;
-    justify-items: right;
-    text-align: center;
-    padding: 11px;
-    text-decoration: none;
-    font-size: 17px;
-    border-radius: 5px;
+nav {
+    font-size: 40px;
 }
 
-.navigation a:hover {
-    background-color: #ddd;
-    color: black;
+#navbar {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    background-color: lightblue;
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
 }
 
-/* Add a color to the active/current link */
-.navigation a.active {
-    background-color: rgb(222, 115, 255);
-    color: white;
+#navbar.open {
+    display: flex;
+    flex-direction: column;
+}
+
+#kryss {
+    display: none;
+    cursor: pointer;
+}
+
+#burger {
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 100px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+#s1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.boks {
+    height: 600px;
+    width: 600px;
+    background-color: lightgreen;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: auto;
+    gap: 40px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.hole {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    background-color: green;
+}
+
+.mole {
+    background-image: url("mole.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
