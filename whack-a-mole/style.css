@@ -127,10 +127,3 @@ nav {
     cursor: pointer;
 }
 
-#mole {
-    background-image: url("mole.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 10;
-}

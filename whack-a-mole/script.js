@@ -36,6 +36,14 @@ light.addEventListener("click", function() {
     light.style.display = "none"
 })
 
+const restart = document.getElementById("restart")
+
+restart.addEventListener("click", function() {
+    poeng = 0
+    poengTall.textContent = 0
+    visMuldvarp()
+})
+
 const poengTall = document.getElementById("poengTall")
 const alleHull = document.querySelectorAll(".hole")
 
