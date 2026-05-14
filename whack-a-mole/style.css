@@ -122,6 +122,9 @@ nav {
     aspect-ratio: 1;
     border-radius: 100%;
     background-color: green;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
 }
 
 #mole {

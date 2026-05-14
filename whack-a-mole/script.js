@@ -36,14 +36,39 @@ light.addEventListener("click", function() {
     light.style.display = "none"
 })
 
+const poengTall = document.getElementById("poengTall")
+const alleHull = document.querySelectorAll(".hole")
 
-const holeElm = document.querySelectorAll(".hole")
+let poeng = 0
+let aktivHull = 0
 
-holeElm.forEach(hole => {
+function visMole () {
+    if (aktivHull) {
+        aktivHull.style.backgroundImage = ""
+        aktivHull.style.backgroundColor = "green"
+    }
+
+    const tilfeldig = Math.floor(math.random() * alleHull)
+    aktivHull = alleHull[tilfeldig]
+
+    aktivHull.style.backgroundImage = "url('mole.png')"
+    aktivHull.style.backgroundSize = "cover"
+    aktivHull.style.backgroundPosition = "center"
+}
+
+alleHull.forEach(hole => {
     hole.addEventListener("click", klikk)
 })
 
 function klikk(event) {
     console.log("hei")
-
+    if (this == aktivHull) {
+        poeng+=
+        poengTall.textContent = poeng
+        visMole()
+    }
 }
+
+setInterval(visMole, 1000)
+
+visMole()
