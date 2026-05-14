@@ -48,7 +48,7 @@ function visMole () {
         aktivHull.style.backgroundColor = "green"
     }
 
-    const tilfeldig = Math.floor(math.random() * alleHull)
+    const tilfeldig = Math.floor(Math.random() * alleHull.length)
     aktivHull = alleHull[tilfeldig]
 
     aktivHull.style.backgroundImage = "url('mole.png')"
@@ -63,7 +63,7 @@ alleHull.forEach(hole => {
 function klikk(event) {
     console.log("hei")
     if (this == aktivHull) {
-        poeng+=
+        poeng++
         poengTall.textContent = poeng
         visMole()
     }
