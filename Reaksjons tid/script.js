@@ -20,19 +20,19 @@ const body = document.getElementById("body")
 const header = document.getElementById("header")
 
 
-dark.addEventListener("click", function() {
+light.addEventListener("click", function() {
     navbar.classList.add("dark")
     body.classList.add("body")
     header.classList.add("header")
-    dark.style.display = "none"
-    light.style.display = "block"
+    dark.style.display = "block"
+    light.style.display = "none"
 })
 
-light.addEventListener("click", function() {
+dark.addEventListener("click", function() {
     navbar.classList.remove("dark")
     body.classList.remove("body")
     header.classList.remove("header")
-    dark.style.display = "block"
-    light.style.display = "none"
+    dark.style.display = "none"
+    light.style.display = "block"
 })
 

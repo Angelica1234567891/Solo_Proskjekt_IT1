@@ -1,0 +1,126 @@
+html {}
+
+body {
+    margin: 0;
+    background-color:mediumseagreen;
+    font-family: 'Diphylleia';
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    border-radius: 10%;
+}
+
+.fa-solid {
+    color: black;
+}
+
+.body {
+    background-color: lightgreen;
+}
+
+.header {
+    background-color: rgb(112, 186, 112);
+}
+
+header {
+    background-color:seagreen;
+    height: 80px;
+    padding: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+
+}
+
+nav {
+    font-size: 40px;
+}
+
+#navbar {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    background-color: seagreen;
+    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10;
+}
+
+#navbar.open {
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar.light{
+    background-color:rgb(112, 186, 112);
+}
+
+#navbar.open.dark {
+    background-color:rgb(112, 186, 112);
+}
+
+#dark {
+    display: none;
+    cursor: pointer;
+}
+
+#kryss {
+    display: none;
+    cursor: pointer;
+}
+
+#burger {
+    cursor: pointer;
+}
+
+section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 400px;
+    width: 800px;
+    background-color: gray;
+    border: black 3px solid;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center ;
+}
+
+.boks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+.lys {
+    width: 100px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-color: green;
+}
+
+button {
+
+}
