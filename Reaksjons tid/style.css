@@ -107,18 +107,43 @@ section {
 }
 
 .boks {
+    width: 800px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 50px;
     gap: 20px;
 }
 
+.boks2 {
+    width: 800px;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
 .lys {
-    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.green {
+    width: 80px;
     aspect-ratio: 1;
     border-radius: 100%;
     background-color: green;
+}
+
+.red {
+    width: 80px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    background-color: red;
 }
 
 button {
