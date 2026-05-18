@@ -2,7 +2,7 @@ html {}
 
 body {
     margin: 0;
-    background-color:mediumseagreen;
+    background-color: mediumseagreen;
     font-family: 'Diphylleia';
 }
 
@@ -30,7 +30,7 @@ img {
 }
 
 header {
-    background-color:seagreen;
+    background-color: seagreen;
     height: 80px;
     padding: 21px;
     display: flex;
@@ -65,12 +65,12 @@ nav {
     flex-direction: column;
 }
 
-#navbar.light{
-    background-color:rgb(112, 186, 112);
+#navbar.light {
+    background-color: rgb(112, 186, 112);
 }
 
 #navbar.open.dark {
-    background-color:rgb(112, 186, 112);
+    background-color: rgb(112, 186, 112);
 }
 
 #dark {
@@ -90,62 +90,74 @@ nav {
 section {
     height: 90vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.timer {
+    width: 200px;
+    height: 50px;
+    font-size: 45px;
+    text-align: center;
 }
 
 .container {
     height: 400px;
     width: 800px;
-    background-color: gray;
+    background-color: darkgray;
     border: black 3px solid;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    align-items: center ;
+    align-items: center;
 }
 
 .boks {
     width: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-    gap: 20px;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 10px;
 }
 
 .boks2 {
     width: 800px;
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    gap: 20px;
+    align-items: stretch;
+    gap: 10px;
 }
 
 .lys {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: stretch;
     gap: 20px;
 }
 
-.green {
+.sirkel {
     width: 80px;
     aspect-ratio: 1;
     border-radius: 100%;
+    background-color: grey;
+}
+
+.green {
     background-color: green;
 }
 
 .red {
-    width: 80px;
-    aspect-ratio: 1;
-    border-radius: 100%;
     background-color: red;
 }
 
 button {
-
+    margin-top: 50px;
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
 }

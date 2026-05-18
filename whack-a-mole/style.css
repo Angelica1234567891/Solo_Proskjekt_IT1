@@ -22,11 +22,11 @@ img {
 }
 
 .body {
-    background-color: darkslateblue;
+    background-color: rgb(157, 196, 209);
 }
 
 .header {
-    background-color: indigo;
+    background-color: rgb(125, 180, 198);
 }
 
 header {
@@ -66,11 +66,11 @@ nav {
 }
 
 #navbar.dark{
-    background-color:darkslateblue;
+    background-color:rgb(157, 196, 209);
 }
 
 #navbar.open.dark {
-    background-color:indigo;
+    background-color:rgb(125, 180, 198);
 }
 
 #light {
