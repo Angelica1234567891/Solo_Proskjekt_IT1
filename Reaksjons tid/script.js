@@ -36,3 +36,29 @@ dark.addEventListener("click", function() {
     light.style.display = "block"
 })
 
+const start = document.getElementById("start")
+const grønneLys = document.querySelectorAll(".green .sirkel")
+const rodeLys = document.querySelectorAll(".red .sirkel")
+
+let spillStatus = "idle"
+
+function stoppLys () {
+    grønneLys.forEach(lys => lys.classList.remove("onGreen"))
+        rødeLys.forEach(lys => lys.classList.remove("onRed"))
+
+}
+
+function startSpill () {
+    if (spillStatus === "venting" || spillStatus === "klar") return
+
+    stoppLys()
+    spillStatus = "waiting"
+    startKnapp.disabled = true
+
+    const ventetid = 1500 + Math.random() * 3500
+    venteTimer = setTimeout(function () {
+        tennGrøntLys ()
+        tidspunkt = performance.now() 
+        spillStatus = "ready"
+    } )
+}
