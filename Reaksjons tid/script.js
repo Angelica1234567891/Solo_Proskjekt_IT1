@@ -38,53 +38,16 @@ dark.addEventListener("click", function () {
 
 const start = document.getElementById("start")
 const grønneLys = document.querySelectorAll(".green .sirkel")
-const rodeLys = document.querySelectorAll(".red .sirkel")
+const rødeLys = document.querySelectorAll(".red .sirkel")
 const startKnapp = document.getElementById("start")
 const statusTekst = document.getElementById("tekst")
 
-
-let spillStatus = "idle"
-let poeng = 0
-let tidspunkt = 0
-let venteTimer = 0
-
-function stoppLys() {
-    grønneLys.forEach(lys => lys.classList.remove("onGreen"))
-    rødeLys.forEach(lys => lys.classList.remove("onRed"))
-
-}
-
-function grønneLysOn () {
-    grønneLys.forEach(lys => lys.classList.add("onGreen"))
-}
-
-function regnUtPoeng (reaksjonstid) {
-    poeng += regnUtPoeng(reaksjonstid)
-    poengTekst.textContent = "Poeng: " + poeng
-}
-
-function startSpill() {
-    if (spillStatus === "venting" || spillStatus === "klar") return
-
-    stoppLys()
-    spillStatus = "waiting"
-    startKnapp.disabled = true
-
+startKnapp.addEventListener("click", function() {
     const ventetid = 1500 + Math.random() * 3500
-    venteTimer = setTimeout(function () {
-        tennGrøntLys()
-        tidspunkt = performance.now()
-        spillStatus = "ready"
-    })
-}
 
-function registrerReaksjon() {
-    const reaksjonstid = Math.round(performance.now() - tidspunkt)
-    spillStatus = "idle"
-    stoppLys()
-}
-
-function spillerTrykket () {
-    if(spillStatus !== "ready") return
-    registrerReaksjon()
-}
+    setTimeout(function() {
+        grønneLys.forEach(function(lys) {
+            lys.style.backgroundColor = "lime"
+        })
+    }, ventetid)
+})
