@@ -49,5 +49,13 @@ startKnapp.addEventListener("click", function() {
         grønneLys.forEach(function(lys) {
             lys.style.backgroundColor = "lime"
         })
+
+         const startTid = performance.now()
+
+        document.addEventListener("click", function() {
+            const reaksjonstid = Math.round(performance.now() - startTid)
+            statusTekst.textContent = reaksjonstid + " ms"
+        }, { once: true })
+        
     }, ventetid)
 })
