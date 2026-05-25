@@ -1,118 +1,61 @@
-html {}
-
-body {
-    margin: 0;
-    background-color: rgb(199, 244, 253);
-    font-family: 'Diphylleia';
-}
-
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-    border-radius: 10%;
+body {
+    background-color: #f4f1ec;
+    font-family: sans-serif;
+    color: #1a1a1a;
 }
 
 header {
-    background-color: lightblue;
-    height: 80px;
-    padding: 21px;
+    background-color: #ffffff;
+    height: 64px;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-}
-
-nav {
-    font-size: 40px;
-}
-
-#navbar {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 80px;
-    background-color: lightblue;
-    padding: 10px;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 10;
-}
-
-#navbar.open {
-    display: flex;
-    flex-direction: column;
-}
-
-#kryss {
-    display: none;
-    cursor: pointer;
-}
-
-#burger {
-    cursor: pointer;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    width: 100px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
 .logo img {
-    width: 60px;
+    width: 40px;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(5, 250px);
-    grid-template-rows: auto;
-    justify-items: center;
-    justify-content: center;
-    gap: 20px;
-
+nav a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 15px;
 }
 
-.grid div {
-    border: solid 3px black;
-    background-color: rgb(107, 107, 198);
-    border-radius: 20%;
-    height: 100%;
-    width: 100%;
-    flex-wrap: wrap;
-    align-items: center;
-    overflow: hidden;
-    
+main {
+    padding: 2rem;
 }
 
-.grid>div:hover {
-    box-shadow: 0 0 20px rgb(0, 0, 0);
-    /* Øker lysstyrken med 30% */
-    border-radius: 10%;
-    transform: scale(1.05);
-    /* Valgfritt: forstørrer bildet litt */
+h1 {
+    font-size: 28px;
+    margin-bottom: 1rem;
 }
 
-.grid img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 0;
+.spill-liste {
+    display: flex;
+    gap: 1rem;
 }
 
-.stor {
-    grid-column: span 2;
-    grid-row: span 2;
+.spill-liste a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 18px;
+    border: 1px solid rgba(0,0,0,0.15);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background: #fff;
 }
 
-.hoy {
-    grid-row: span 2;
-}
-
-.lang {
-    grid-column: span 2;
+footer {
+    padding: 1rem 2rem;
+    font-size: 13px;
+    color: #888;
+    border-top: 1px solid rgba(0,0,0,0.08);
 }
