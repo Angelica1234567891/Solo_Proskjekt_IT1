@@ -4,19 +4,23 @@
 }
 
 body {
-    background-color: #f4f1ec;
+    background-color: rgb(244, 241, 236);
     font-family: sans-serif;
-    color: #1a1a1a;
+    color: rgb(26, 26, 26);
 }
 
 header {
-    background-color: #ffffff;
+    background-color: whitesmoke;
     height: 64px;
-    padding: 0 2rem;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .logo img {
@@ -25,36 +29,57 @@ header {
 
 nav a {
     text-decoration: none;
-    color: #1a1a1a;
+    color: rgb(26, 26, 26);
     font-size: 15px;
 }
 
 main {
-    padding: 2rem;
+    padding-top: 64px;
 }
 
-h1 {
-    font-size: 28px;
-    margin-bottom: 1rem;
+.hero {
+    padding: 50px;
 }
 
-.spill-liste {
-    display: flex;
-    gap: 1rem;
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 8px;
 }
 
-.spill-liste a {
+.hero p {
+    font-size: 15px;
+    color: rgb(102, 102, 102);
+}
+
+.spill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.kort {
     text-decoration: none;
-    color: #1a1a1a;
+    color: rgb(26, 26, 26);
+    background: rgb(255, 255, 255);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+}
+
+.kort img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.kort h2 {
+    padding: 20px;
     font-size: 18px;
-    border: 1px solid rgba(0,0,0,0.15);
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    background: #fff;
 }
 
 footer {
-    padding: 1rem 2rem;
+    padding: 20px;
     font-size: 13px;
     color: #888;
     border-top: 1px solid rgba(0,0,0,0.08);
