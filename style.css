@@ -4,33 +4,106 @@
 }
 
 body {
-    background-color: rgb(244, 241, 236);
+    background-color: #f4f1ec;
     font-family: sans-serif;
-    color: rgb(26, 26, 26);
+    color: #1a1a1a;
 }
 
 header {
-    background-color: whitesmoke;
+    background-color: #ffffff;
     height: 64px;
-    padding: 20px;
+    padding: 0 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 100;
 }
 
-.logo img {
-    width: 40px;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-nav a {
+.logo img {
+    width: 36px;
+    border-radius: 8px;
+}
+
+.logo-navn {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #1a1a1a;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.nav-btn:hover {
+    background: #f4f1ec;
+}
+
+#kryss {
+    display: none;
+}
+
+#kryss.synlig {
+    display: flex;
+}
+
+#burger.skjult {
+    display: none;
+}
+
+.navbar {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 160px;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 200;
+}
+
+.navbar.open {
+    display: flex;
+}
+
+.nav-lenke {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
     text-decoration: none;
-    color: rgb(26, 26, 26);
-    font-size: 15px;
+    border-radius: 8px;
+}
+
+.nav-lenke:hover {
+    background: #f4f1ec;
 }
 
 main {
@@ -38,30 +111,30 @@ main {
 }
 
 .hero {
-    padding: 50px;
+    padding: 3rem 2rem 1.5rem;
 }
 
 .hero h1 {
     font-size: 36px;
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
 }
 
 .hero p {
     font-size: 15px;
-    color: rgb(102, 102, 102);
+    color: #666;
 }
 
 .spill-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
+    gap: 1.25rem;
+    padding: 1rem 2rem 3rem;
 }
 
 .kort {
     text-decoration: none;
-    color: rgb(26, 26, 26);
-    background: rgb(255, 255, 255);
+    color: #1a1a1a;
+    background: #fff;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.08);
@@ -74,12 +147,18 @@ main {
 }
 
 .kort h2 {
-    padding: 20px;
+    padding: 1rem 1rem 0.25rem;
     font-size: 18px;
 }
 
+.kort p {
+    padding: 0 1rem 1rem;
+    font-size: 13px;
+    color: #666;
+}
+
 footer {
-    padding: 20px;
+    padding: 1rem 2rem;
     font-size: 13px;
     color: #888;
     border-top: 1px solid rgba(0,0,0,0.08);

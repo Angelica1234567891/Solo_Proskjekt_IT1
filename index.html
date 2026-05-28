@@ -4,17 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Arena</title>
+    <title>Pixel Arcade</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="bilder/PixelLogo.png" alt="Pixel Arena logo">
+            <img src="bilder/PixelLogo.png" alt="Pixel Arcade logo">
+            <span class="logo-navn">Pixel Arcade</span>
         </div>
         <nav>
-            <a href="/index.html">Hjem</a>
+            <button class="nav-btn" id="burger" aria-label="Åpne meny">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <button class="nav-btn" id="kryss" aria-label="Lukk meny">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="navbar" id="navbar">
+                <a href="/index.html" class="nav-lenke">
+                    <i class="fa-solid fa-house"></i>
+                    Hjem
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -28,18 +41,21 @@
             <a href="Reaksjons tid/index.html" class="kort">
                 <img src="bilder/reaksjonsTid.png" alt="Reaksjonstid spill">
                 <h2>Reaksjonstid</h2>
+                <p>Mål hvor fort du reagerer i millisekunder.</p>
             </a>
             <a href="whack-a-mole/index.html" class="kort">
                 <img src="bilder/whack.jpg" alt="Whack-a-Mole spill">
                 <h2>Whack-a-Mole</h2>
+                <p>Slå moldvarper før de stikker av!</p>
             </a>
         </section>
     </main>
 
     <footer>
-        <p>Pixel Arcade</p>
+        <p>Pixel Arcade &mdash; 2 spill tilgjengelig</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

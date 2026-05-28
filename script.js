@@ -13,3 +13,8 @@ kryss.addEventListener("click", function() {
     burger.style.display = "block"
     kryss.style.display = "none"
 })
+
+const dark = document.getElementById("dark")
+const light = document.getElementById("light")
+const body = document.getElementById("body")
+const header = document.getElementById("header")
