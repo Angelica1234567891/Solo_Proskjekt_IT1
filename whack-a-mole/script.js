@@ -19,7 +19,6 @@ const light = document.getElementById("light")
 const body = document.getElementById("body")
 const header = document.getElementById("header")
 
-
 dark.addEventListener("click", function() {
     navbar.classList.add("dark")
     body.classList.add("body")
@@ -36,21 +35,16 @@ light.addEventListener("click", function() {
     light.style.display = "none"
 })
 
-const restart = document.getElementById("restart")
-
-restart.addEventListener("click", function() {
-    poeng = 0
-    poengTall.textContent = 0
-    visMuldvarp()
-})
-
 const poengTall = document.getElementById("poengTall")
 const alleHull = document.querySelectorAll(".hole")
+const restart = document.getElementById("restart")
 
 let poeng = 0
-let aktivHull = 0
+let aktivHull = null
+let spillAktivt = false
+let intervall = null
 
-function visMole () {
+function visMuldvarp() {
     if (aktivHull) {
         aktivHull.style.backgroundImage = ""
         aktivHull.style.backgroundColor = "green"
@@ -58,25 +52,33 @@ function visMole () {
 
     const tilfeldig = Math.floor(Math.random() * alleHull.length)
     aktivHull = alleHull[tilfeldig]
-
     aktivHull.style.backgroundImage = "url('mole.png')"
     aktivHull.style.backgroundSize = "cover"
     aktivHull.style.backgroundPosition = "center"
 }
 
-alleHull.forEach(hole => {
-    hole.addEventListener("click", klikk)
-})
+function startSpill() {
+    poeng = 0
+    poengTall.textContent = 0
+    spillAktivt = true
 
-function klikk(event) {
-    console.log("hei")
-    if (this == aktivHull) {
-        poeng++
-        poengTall.textContent = poeng
-        visMole()
-    }
+    if (intervall) clearInterval(intervall)
+    intervall = setInterval(visMuldvarp, 1000)
+    visMuldvarp()
 }
 
-setInterval(visMole, 1000)
+alleHull.forEach(hull => {
+    hull.addEventListener("click", function () {
+        if (!spillAktivt) return
+        if (this === aktivHull) {
+            poeng++
+            poengTall.textContent = poeng
+            visMuldvarp()
+        }
+    })
+})
 
-visMole()
+restart.addEventListener("click", startSpill)
+
+// Start automatisk
+startSpill()
