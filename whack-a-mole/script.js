@@ -36,13 +36,19 @@ light.addEventListener("click", function() {
 })
 
 const poengTall = document.getElementById("poengTall")
+const timerTall = document.getElementById("timerTall")
+const sluttPoeng = document.getElementById("sluttPoeng")
+const gameOverDiv = document.getElementById("gameOver")
+const startKnapp = document.getElementById("startKnapp")
 const alleHull = document.querySelectorAll(".hole")
 const restart = document.getElementById("restart")
 
 let poeng = 0
 let aktivHull = null
 let spillAktivt = false
-let intervall = null
+let muldvarpIntervall = null
+let timerIntervall = null
+let tidIgjen = 30
 
 function visMuldvarp() {
     if (aktivHull) {
@@ -57,13 +63,42 @@ function visMuldvarp() {
     aktivHull.style.backgroundPosition = "center"
 }
 
+function avsluttSpill() {
+    spillAktivt = false
+    clearInterval(muldvarpIntervall)
+    clearInterval(timerIntervall)
+
+    if (aktivHull) {
+        aktivHull.style.backgroundImage = ""
+        aktivHull.style.backgroundColor = "green"
+        aktivHull = null
+    }
+
+    sluttPoeng.textContent = poeng
+    gameOverDiv.style.display = "block"
+}
+
 function startSpill() {
     poeng = 0
+    tidIgjen = 30
     poengTall.textContent = 0
+    timerTall.textContent = 30
     spillAktivt = true
+    gameOverDiv.style.display = "none"
 
-    if (intervall) clearInterval(intervall)
-    intervall = setInterval(visMuldvarp, 1000)
+    clearInterval(muldvarpIntervall)
+    clearInterval(timerIntervall)
+
+    muldvarpIntervall = setInterval(visMuldvarp, 1000)
+
+    timerIntervall = setInterval(function () {
+        tidIgjen--
+        timerTall.textContent = tidIgjen
+        if (tidIgjen <= 0) {
+            avsluttSpill()
+        }
+    }, 1000)
+
     visMuldvarp()
 }
 
@@ -78,7 +113,7 @@ alleHull.forEach(hull => {
     })
 })
 
+startKnapp.addEventListener("click", startSpill)
 restart.addEventListener("click", startSpill)
 
-// Start automatisk
 startSpill()
