@@ -40,6 +40,7 @@ const timerTall = document.getElementById("timerTall")
 const sluttPoeng = document.getElementById("sluttPoeng")
 const gameOverDiv = document.getElementById("gameOver")
 const startKnapp = document.getElementById("startKnapp")
+const highscoreTall = document.getElementById("highscoreTall")
 const alleHull = document.querySelectorAll(".hole")
 const restart = document.getElementById("restart")
 
@@ -49,6 +50,10 @@ let spillAktivt = false
 let muldvarpIntervall = null
 let timerIntervall = null
 let tidIgjen = 30
+let hastighet = 1000 
+
+let highscore = localStorage.getItem("whackHighscore") || 0
+highscoreTall.textContent = highscore
 
 function visMuldvarp() {
     if (aktivHull) {
@@ -63,6 +68,18 @@ function visMuldvarp() {
     aktivHull.style.backgroundPosition = "center"
 }
 
+function oppdaterHastighet() {
+    if (tidIgjen === 20) {
+        hastighet = 750
+    } else if (tidIgjen === 10) {
+        hastighet = 500
+    } else {
+        return
+    }
+    clearInterval(muldvarpIntervall)
+    muldvarpIntervall = setInterval(visMuldvarp, hastighet)
+}
+
 function avsluttSpill() {
     spillAktivt = false
     clearInterval(muldvarpIntervall)
@@ -74,6 +91,12 @@ function avsluttSpill() {
         aktivHull = null
     }
 
+    if (poeng > highscore) {
+        highscore = poeng
+        localStorage.setItem("whackHighscore", highscore)
+        highscoreTall.textContent = highscore
+    }
+
     sluttPoeng.textContent = poeng
     gameOverDiv.style.display = "block"
 }
@@ -81,6 +104,7 @@ function avsluttSpill() {
 function startSpill() {
     poeng = 0
     tidIgjen = 30
+    hastighet = 1000
     poengTall.textContent = 0
     timerTall.textContent = 30
     spillAktivt = true
@@ -89,11 +113,12 @@ function startSpill() {
     clearInterval(muldvarpIntervall)
     clearInterval(timerIntervall)
 
-    muldvarpIntervall = setInterval(visMuldvarp, 1000)
+    muldvarpIntervall = setInterval(visMuldvarp, hastighet)
 
     timerIntervall = setInterval(function () {
         tidIgjen--
         timerTall.textContent = tidIgjen
+        oppdaterHastighet()
         if (tidIgjen <= 0) {
             avsluttSpill()
         }
@@ -109,6 +134,11 @@ alleHull.forEach(hull => {
             poeng++
             poengTall.textContent = poeng
             visMuldvarp()
+        } else {
+            this.style.backgroundColor = "red"
+            setTimeout(() => {
+                this.style.backgroundColor = "green"
+            }, 200)
         }
     })
 })

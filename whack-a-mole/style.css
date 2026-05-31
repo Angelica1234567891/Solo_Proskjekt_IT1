@@ -99,6 +99,7 @@ nav {
 
 #s1 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 90vh;
@@ -125,5 +126,28 @@ nav {
     background-size: cover;
     background-position: center;
     cursor: pointer;
+}
+
+#gameOver {
+    display: none;
+    height: 250px;
+    width: 200px;
+    background-color: beige;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#sluttPoeng {
+    font-weight: 900;
+}
+
+#startKnapp {
+    height: 30px;
+    width: 100px;
+    font-size: 15px;
+    border-radius: 20px;
+    background-color: green ;
+
 }
 
