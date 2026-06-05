@@ -36,26 +36,73 @@ dark.addEventListener("click", function () {
     light.style.display = "block"
 })
 
-const start = document.getElementById("start")
-const grønneLys = document.querySelectorAll(".green .sirkel")
-const rødeLys = document.querySelectorAll(".red .sirkel")
 const startKnapp = document.getElementById("start")
+const grønneLys = document.querySelectorAll(".green .sirkel")
 const statusTekst = document.getElementById("tekst")
+const tidSpan = document.getElementById("tid")
+const poengDiv = document.getElementById("poeng")
 
-startKnapp.addEventListener("click", function() {
+let poeng = 0
+let timerInterval = null
+let sekunder = 0
+let spillAktivt = false
+
+function oppdaterPoeng() {
+    poengDiv.innerHTML = "<h3>Poeng: " + poeng + "</h3>"
+}
+
+function startTimer() {
+    sekunder = 0
+    tidSpan.textContent = sekunder
+    timerInterval = setInterval(function () {
+        sekunder++
+        tidSpan.textContent = sekunder
+    }, 1000)
+}
+
+function stoppTimer() {
+    clearInterval(timerInterval)
+}
+
+startKnapp.addEventListener("click", function () {
+    if (spillAktivt) return
+    spillAktivt = true
+    statusTekst.textContent = "Vent..."
+    startTimer()
+
     const ventetid = 1500 + Math.random() * 3500
 
-    setTimeout(function() {
-        grønneLys.forEach(function(lys) {
+    setTimeout(function () {
+        grønneLys.forEach(function (lys) {
             lys.style.backgroundColor = "lime"
         })
 
-         const startTid = performance.now()
+        const startTid = performance.now()
 
-        document.addEventListener("click", function() {
+        document.addEventListener("click", function () {
             const reaksjonstid = Math.round(performance.now() - startTid)
-            statusTekst.textContent = reaksjonstid + " ms"
+            stoppTimer()
+            spillAktivt = false
+
+            if (reaksjonstid < 400) {
+                poeng += 3
+                statusTekst.textContent = reaksjonstid + " ms – Rask! +3 poeng"
+            } else if (reaksjonstid < 700) {
+                poeng += 1
+                statusTekst.textContent = reaksjonstid + " ms – OK! +1 poeng"
+            } else {
+                statusTekst.textContent = reaksjonstid + " ms – For sent! +0 poeng"
+            }
+
+            oppdaterPoeng()
+
+            grønneLys.forEach(function (lys) {
+                lys.style.backgroundColor = ""
+            })
+
         }, { once: true })
-        
+
     }, ventetid)
 })
+
+oppdaterPoeng()

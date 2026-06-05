@@ -168,3 +168,43 @@ button {
     text-transform: uppercase;
     letter-spacing: 5px;
 }
+
+@media (max-width: 800px) {
+    .container {
+        width: 90%;
+        height: 350px;
+    }
+
+    .sirkel {
+        width: 45px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+        height: 300px;
+    }
+
+    .sirkel {
+        width: 30px;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    button {
+        width: 150px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    .timer {
+        font-size: 30px;
+    }
+}
