@@ -1,22 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:wght@600&display=swap');
+
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
 body {
-    background-color: #f4f1ec;
-    font-family: sans-serif;
-    color: #1a1a1a;
+    background-color: rgb(244, 241, 236);
+    font-family: 'DM Sans', sans-serif;
+    color: black;
 }
 
 header {
-    background-color: #ffffff;
+    background: rgb(255, 255, 255);
     height: 64px;
-    padding: 0 2rem;
+    padding: 0 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0,0,0,0.08);
+    border-bottom: 1px solid black;
     position: fixed;
     top: 0;
     width: 100%;
@@ -34,8 +36,9 @@ header {
     border-radius: 8px;
 }
 
-.logo-navn {
-    font-size: 17px;
+.logoNavn {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -45,18 +48,19 @@ nav {
     align-items: center;
 }
 
-.nav-btn {
+.navKnapp {
     background: none;
     border: none;
     font-size: 22px;
     cursor: pointer;
-    color: #1a1a1a;
+    color: black;
     padding: 6px;
     border-radius: 8px;
+    transition: background 0.2s;
 }
 
-.nav-btn:hover {
-    background: #f4f1ec;
+.navKnapp:hover {
+    background: rgb(244, 241, 236);
 }
 
 #kryss {
@@ -75,14 +79,13 @@ nav {
     display: none;
     position: absolute;
     right: 0;
-    top: calc(100% + 12px);
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.1);
+    top: 76px;
+    background: rgb(255, 255, 255);
+    border: 1px solid black;
     border-radius: 12px;
     padding: 8px;
     min-width: 160px;
     flex-direction: column;
-    gap: 2px;
     z-index: 200;
 }
 
@@ -90,76 +93,175 @@ nav {
     display: flex;
 }
 
-.nav-lenke {
+.navLenke {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 10px 14px;
     font-size: 14px;
     font-weight: 500;
-    color: #1a1a1a;
+    color: black;
     text-decoration: none;
     border-radius: 8px;
+    transition: background 0.2s;
 }
 
-.nav-lenke:hover {
-    background: #f4f1ec;
+.navLenke:hover {
+    background: rgb(244, 241, 236);
 }
 
 main {
     padding-top: 64px;
+    max-width: 860px;
+    margin: 0 auto;
+    padding-left: 32px;
+    padding-right: 32px;
 }
 
 .hero {
-    padding: 3rem 2rem 1.5rem;
+    padding-top: 56px;
+    padding-bottom: 32px;
 }
 
-.hero h1 {
-    font-size: 36px;
-    margin-bottom: 0.5rem;
+.heroTopp {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: gray;
+    margin-bottom: 8px;
 }
 
-.hero p {
+.heroTittel {
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.heroUnder {
     font-size: 15px;
-    color: #666;
+    color: rgb(107, 107, 107);
 }
 
-.spill-grid {
+#s1 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
-    padding: 1rem 2rem 3rem;
+    gap: 20px;
+    padding-bottom: 48px;
 }
 
 .kort {
-    text-decoration: none;
-    color: #1a1a1a;
-    background: #fff;
-    border-radius: 12px;
+    background: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.08);
+    text-decoration: none;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s, border-color 0.2s;
 }
 
-.kort img {
+.kort:hover {
+    transform: translateY(-3px);
+    border-color: black;
+}
+
+.kort:hover .pil {
+    transform: translateX(3px);
+    color: black;
+}
+
+.kortBilde {
+    overflow: hidden;
+}
+
+.kortBilde img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
 }
 
-.kort h2 {
-    padding: 1rem 1rem 0.25rem;
-    font-size: 18px;
+.kort:hover .kortBilde img {
+    transform: scale(1.04);
 }
 
-.kort p {
-    padding: 0 1rem 1rem;
+.kortInnhold {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.kortTopp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.kortTopp h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.pil {
+    color: gray;
+}
+
+.beskrivelse {
     font-size: 13px;
-    color: #666;
+    color: gray;
+    line-height: 1.6;
+}
+
+.tagger {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 10px;
+    border-radius: 99px;
+    border: 1px solid black;
+    color: gray;
+    background: rgb(244, 241, 236);
+}
+
+.tagGronn {
+    background: rgb(225, 245, 238);
+    border-color: rgb(159, 225, 203);
+    color: rgb(8, 80, 65);
+}
+
+.tagLilla {
+    background: rgb(238, 237, 254);
+    border-color: rgb(175, 169, 236);
+    color: rgb(60, 52, 137);
 }
 
 footer {
-    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 32px;
+    border-top: 1px solid black;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.footerTekst {
     font-size: 13px;
-    color: #888;
-    border-top: 1px solid rgba(0,0,0,0.08);
+    color: gray;
+}
+
+.footerUnder {
+    font-size: 12px;
+    color: rgb(170, 170, 170);
 }

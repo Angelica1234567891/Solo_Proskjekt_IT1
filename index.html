@@ -13,19 +13,23 @@
     <header>
         <div class="logo">
             <img src="bilder/PixelLogo.png" alt="Pixel Arcade logo">
-            <span class="logo-navn">Pixel Arcade</span>
+            <span class="logoNavn">Pixel Arcade</span>
         </div>
         <nav>
-            <button class="nav-btn" id="burger" aria-label="Åpne meny">
+            <button class="navKnapp" id="burger" >
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <button class="nav-btn" id="kryss" aria-label="Lukk meny">
+            <button class="navKnapp" id="kryss" >
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div class="navbar" id="navbar">
-                <a href="/index.html" class="nav-lenke">
+                <a href="/index.html" class="navLenke">
                     <i class="fa-solid fa-house"></i>
                     Hjem
+                </a>
+                <a href="#s2" class="navLenke">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Info
                 </a>
             </div>
         </nav>
@@ -33,26 +37,62 @@
 
     <main>
         <section class="hero">
-            <h1>Velg et spill</h1>
-            <p>To spill. To måter å teste refleksene dine.</p>
+            <p class="heroTopp">Velg et spill</p>
+            <h1 class="heroTittel">Pick your challenge</h1>
+            <p class="heroUnder">To spill. To måter å teste refleksene dine.</p>
         </section>
 
-        <section class="spill-grid">
+        <section id="s1">
+
             <a href="Reaksjons tid/index.html" class="kort">
-                <img src="bilder/reaksjonsTid.png" alt="Reaksjonstid spill">
-                <h2>Reaksjonstid</h2>
-                <p>Mål hvor fort du reagerer i millisekunder.</p>
+                <div class="kortBilde">
+                    <img src="bilder/reaksjonsTid.png" >
+                </div>
+                <div class="kortInnhold">
+                    <div class="kortTopp">
+                        <h2>Reaksjonstid</h2>
+                        <i class="fa-solid fa-arrow-right pil"></i>
+                    </div>
+                    <p class="beskrivelse">Vent på signalet, klikk så fort du kan. Reaksjonstiden din måles i
+                        millisekunder.</p>
+                    <div class="tagger">
+                        <span class="tag tagGronn">Klikk</span>
+                        <span class="tag">Fokus</span>
+                        <span class="tag">Timing</span>
+                    </div>
+                </div>
             </a>
+
             <a href="whack-a-mole/index.html" class="kort">
-                <img src="bilder/whack.jpg" alt="Whack-a-Mole spill">
-                <h2>Whack-a-Mole</h2>
-                <p>Slå moldvarper før de stikker av!</p>
+                <div class="kortBilde">
+                    <img src="bilder/whack.jpg">
+                </div>
+                <div class="kortInnhold">
+                    <div class="kortTopp">
+                        <h2>Whack-a-Mole</h2>
+                        <i class="fa-solid fa-arrow-right pil"></i>
+                    </div>
+                    <p class="beskrivelse">Moldvarper dukker opp tilfeldig — treff så mange som mulig før tiden er
+                        ute.</p>
+                    <div class="tagger">
+                        <span class="tag tagLilla">Mus / trykk</span>
+                        <span class="tag">Fart</span>
+                        <span class="tag">Presisjon</span>
+                    </div>
+                </div>
             </a>
+
+        </section>
+        <section id="s2">
+            <p class="heroLabel">Info om spillene</p>
+            <h1 class="heroTittel">Hvordan spiller man:</h1>
+            <p></p>
         </section>
     </main>
 
     <footer>
-        <p>Pixel Arcade &mdash; 2 spill tilgjengelig</p>
+        <p class="footerTekst">&copy; 2025 Pixel Arcade</p>
+        <p class="footerUnder">2 spill tilgjengelig</p>
     </footer>
 
     <script src="script.js"></script>
