@@ -65,12 +65,12 @@ nav {
     flex-direction: column;
 }
 
-#navbar.dark{
-    background-color:rgb(157, 196, 209);
+#navbar.dark {
+    background-color: rgb(157, 196, 209);
 }
 
 #navbar.open.dark {
-    background-color:rgb(125, 180, 198);
+    background-color: rgb(125, 180, 198);
 }
 
 #light {
@@ -129,11 +129,11 @@ nav {
 }
 
 #gameOver {
-    display: none;
     height: 250px;
     width: 200px;
     background-color: beige;
-    justify-content: center;
+    text-align: center;
+    line-height: 50px;
     align-items: center;
     border-radius: 20px;
 }
@@ -149,4 +149,12 @@ nav {
     border-radius: 20px;
     background-color: green;
 
+}
+
+#s2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
